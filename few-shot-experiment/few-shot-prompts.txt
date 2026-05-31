@@ -1,0 +1,131 @@
+#################################################
+#                                               #
+#    Prompt for effective teaching practices    #
+#                                               #
+#################################################
+
+
+
+pmt_ef_1 ="""You are an expert in university teaching.
+
+Help me label student comments from a teaching evaluation survey. Your task is to analyze the presence or absence of a teaching practice in the student comment. To achieve that, create a step-by-step analysis to determine whether the practice is present or absent in the text.
+
+If you conclude that the practice is present, extract the exact quote that supports your decision. If there are no quotes about the topic, leave the field as null. Do not add any comments indicating that there are no quotes—just leave it as null.
+
+Here is the comment of the stuent to analyze:
+'"""
+
+# Comment
+
+pmt_ef_2_lab ="""'
+
+The practice that you have to label if it is present or absent is: '"""
+
+# practice
+
+pmt_ef_2_des = """'. Description: """ 
+
+# Description
+
+pmt_ef_2_ex = ". And some examples of texts that an expert labeled with this teaching practice as present:\n"
+
+# Examples
+
+pmt_ef_3_sch1 = '''
+
+Respond with this JSON schema:
+{
+"practice" : "'''
+
+pmt_ef_3_sch2 = '''",
+"label" : "<present-or-absent>",
+"step-by-step-analysis" : "<your-step-by-step-analysis-of-the-comment>",
+"quote" : "<your-selected-evidence or null>"
+}
+'''
+
+
+pmt_ef_4 = """
+Rules:
+- Return only the JSON schema, without any comments or summaries outside of it.
+- Include only verbatim quotes from the text—do not modify a single word.
+- If there are no direct quotes related to the topic, leave the field empty (null). Do not add comments explaining that there are no quotes.
+- Do not modify the schema or add other practices. I don't care about other practices that i'm not asking.
+- Do not add ```json marked. """
+
+
+
+
+
+
+#################################################
+#                                               #
+#  Prompt for malfunctional teaching practices  #
+#                                               #
+#################################################
+
+
+pmt_mf_1 ="""You are an expert in university teaching.
+
+Your task is to analyze student comments from faculty evaluation surveys.
+
+We want to identify textual evidence that mentions directly or indirectly a specific malfunctional teaching practice, and you have to decide if it is TRUE or FALSE in the student comment.
+
+Some practices are defined as a “lack of” something. In those cases, if the comment points out a problem, deficiency, or criticism related to that aspect, that counts as TRUE for the malfunctional practice.
+
+If you don’t find any evidence, leave the "quote" field empty (fill with null value, and do not write comments such as “no evidence found”).
+
+For each practice, follow these steps:
+
+Carefully read the comment.
+
+Identify words or phrases that describe behaviors, attitudes, or situations related to the practice.
+
+Consider whether the text expresses criticism, or complaint related to the practice.
+
+If you find evidence, extract an exact textual quote (the relevant phrase or part of a phrase).
+
+If there is no evidence, fill 'quote' field with null value.
+
+Comment to analyze:
+'"""
+
+# comment
+
+pmt_mf_2_lab ="""'
+
+The practice that you have to label if it is True or False is: '"""
+
+# Practice
+
+pmt_mf_2_des = """'. Description: """ 
+
+# Description
+
+pmt_ef_2_ex = ". And some examples of texts that an expert labeled with this teaching practice as True:\n"
+
+# Examples
+
+pmt_ef_3_sch = '''
+
+Respond with this JSON schema:
+{
+"practice" : "'''
+
+pmt_mf_3_sch = '''",
+"label" : "<True-or-False>",
+"step-by-step-analysis" : "<your-step-by-step-analysis-of-the-comment>",
+"quote" : "<your-selected-evidence or null>"
+}
+
+If the comment does not mention anything related with the teaching practice, complete only the field corresponding to your step-by-step reasoning to conclude that it does not refer to anything in particular, and leave all other fields blank.
+
+'"""
+
+pmt_mf_3 ="""'
+
+Rules:
+Return only the JSON schema, with no comments or summary outside of it.
+Make sure to include only exact textual quotes, without changing a single word from the text.
+Remember: if there are no textual quotes that mention each topic, fill "quote" field with null value. That is, you cannot add comments like “no quote found.” Just leave it null.
+Do not add ```json marked. """
