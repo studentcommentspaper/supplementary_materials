@@ -1,2 +1,2 @@
-# supplementary_materrials
+# supplementary_materials
 Supplementary materials for Detecting effective and malfunctional teaching practices in student evaluations using LLMs
