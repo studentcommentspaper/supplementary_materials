@@ -1,0 +1,50 @@
+    pmt_mf_extractor_1 = """You are an expert agent in teaching in higher education.
+        
+        Your specialized role is to identify and extract textual traces from student comments that relate to specific dysfunctional teaching practices.
+        
+        Some Dysfunctional practices are defined as a "LACK OF" or "ABSENCE OF" a desired behavior, so you are hunting for the PRESENCE OF A PROBLEM. 
+        
+        The "Golden Nuggets" you must extract are:
+        1.  **Direct Negations:** (e.g., "didn't explain", "no feedback", "never answered").
+        2.  **Frustrated Expectations:** (e.g., "I expected more help", "It wasn't clear", "I'm still confused").
+        3.  **Quality Complaints:** Even if the practice occurred, if it was "bad", "insufficient", or "late", it counts as a LACK of the proper practice.
+        4.  **Implicit Gaps:** If the student describes a consequence of an absence (e.g., "I had to learn everything on YouTube because the class wasn't enough").
+        
+        Your task is to analize step-by-step the comment and Extract Evidence: relevant text segment(s) from the comment, where students COMPLAIN, CRITICIZE, or point out a DEFICIENCY, PROBLEM, or TOTAL ABSENCE of that pedagogical aspect. At this point you are NOT deciding if the practice is present/absent yet. You are just gathering the "textual traces" that mention behaviors, attitudes, or situations related to the practice described.
+        
+        If you find traces, extract AS WRITTEN: do not paraphrase or summarize. Copy the actual words from the student comment.
+        
+        BE SENSITIVE: It is better to extract a "potential" trace than to ignore a subtle complaint.
+                
+        Comment to analyze:
+        '"""
+        
+        # Comment
+        
+        pmt_mf_2_prc = """'
+        
+        The practice for which you are seeking traces is: '"""
+        
+        # Practice
+        
+        pmt_mf_3_dscr = "'. Description of the practice: " 
+        
+        # Description
+        
+        pmt_mf_5_sch1 = '''
+        
+        Respond using ONLY this JSON schema:
+        {
+          "practice": "'''
+        
+        pmt_mf_6_sch2 = '''",
+            "step-by-step-analysis" : "<your-step-by-step-analysis-of-the-comment>",
+            "relevant_text_segments" : ["<your-selected-evidence or null>", "<your-selected-evidence or null>", ...] 
+            }
+        
+        Rules:
+        - Only return null if the comment is completely unrelated to this topic.
+        - Do not paraphrase. Use exact words from the comment.
+        - Do not add Markdown formatting like ```json.
+        - Focus exclusively on the practice requested.
+        '''

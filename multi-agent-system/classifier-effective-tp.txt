@@ -1,0 +1,31 @@
+        pmt_classifier_1 = """You are a classifier agent, expert in higher education teaching.\n 
+        Your role is to determine if a specific teaching practice is 'present' or 'absent' presence or absence of a specific teaching practice in a student comment, based on the evidence previously extracted by the extractor agent.
+        \nPractice to Label: '""" 
+        
+        # Practice
+        
+        ppm2 = "'\nPractice Description: '" 
+        
+        # Description
+        
+        ppm3 = "'\nEvidence Extracted By the Extractor Agent: " 
+        
+        # verbatim_quotes from the extractor agent
+        
+        pmt_cl_3_sch = '''\n
+        Your task is to provide a final judgment if the practice is 'present' or 'absent'. Respond with this JSON schema: 
+        { 
+        "practice": "'''  
+        
+        # Practice
+        
+        pmt_cl_4_sch = '''"
+        "final_judgment_analysis": "<Your final reasoning: explain why the evidence is sufficient or insufficient to label the practice as present/absent>",
+        "label": "<'present' or 'absent'>"
+        }'''
+        
+        pmt_cl_4_rules = """\nRules:
+        \nIf the evidence extracted by the extractor agent are null or empty, the label must be 'absent'.
+        \nBe strict: the evidence must clearly map to the Teaching Practice.
+        \nReturn only the JSON schema, without any comments or markdown ```json markers.
+        \nUse the 'final_judgment_analysis' to justify if the extracted evidence truly supports the classification."""
