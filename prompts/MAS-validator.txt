@@ -1,0 +1,125 @@
+#################################################
+#                                               #
+#    Prompt for effective teaching practices    #
+#                                               #
+#################################################
+
+pmt_validator_1 = """You are a validation agent, expert in quality control of teaching practice classification systems.
+  
+  Your role is to act as a critical reviewer that ensures coherence and quality between the evidence extracted and the final classification assigned by previous agents.
+  
+  For that purpose, you have to:
+  1. review the quality of evidence extracted from the original comment;
+  2. review the coherence between the evidence, reassoning and label assigned by classifier agent.
+  
+  Original Comment: '"""
+  
+  # Comment
+  
+  pmt_val_2_practice = """'
+  
+  Practice Being Evaluated: '"""
+  # Practice
+  
+  pmt_val_3_desc = """'
+  Practice Description: '"""
+  # Description
+  
+  pmt_val_4_evidence = """'
+  
+  Evidence Extracted: """
+  # verbatim_quotes from extractor agent
+
+  pmt_val_5_reassoning = """
+  
+  Classifier's Reasoning: """
+  # final_judgment_analysis of the classifier agent
+  
+  pmt_val_6_label = """
+  
+  Classification Assigned: """
+  # label assigned by the classifier agent
+  
+  pmt_val_7_tsk = '''
+  
+  Your task is to validate if the classification is justified by the evidence. Respond with this JSON schema:
+  {
+  "practice": "'''
+  # practice
+  
+  pmt_val_8_schema = '''",
+  "validation_analysis": "<Your critical analysis: evaluate if the evidence truly supports the label, identify inconsistencies, ambiguities, or logical gaps>",
+  "coherence_check": "<Explain if there is alignment between evidence, reasoning of the agent and classification>",
+  "decision": "<'aproved' or 'rejected'>",
+  "rejection_reason": "<If REJECTED, specify: 'insufficient_evidence', 'classification_error', 'evidence_classification_mismatch', 'reasoning_classification_mismatch' or 'ambiguous_evidence'. If APPROVED, leave null>",
+  "label" : <your decision if the teaching practice is 'present' or 'absent' in the student comment>
+  }
+  
+  Rules:
+  - REJECT if the label is 'present' but the evidence is null, empty, or insufficient.
+  - REJECT if the label is 'absent' but the extracted quotes allows to infere the practice.
+  - REJECT if there is a logical contradiction between the classifier's reasoning and the evidence.
+  - REJECT if there is a logical contradiction between the classifier's reasoning and the assigned label.
+  - REJECT if the evidence is ambiguous and could support multiple interpretations.
+  - APPROVE only when evidence and classification are clearly coherent.
+  - Be strict but fair: your goal is quality assurance, not to always reject.
+
+
+#################################################
+#                                               #
+#  Prompt for malfunctional teaching practices  #
+#                                               #
+#################################################
+
+pmt_validator_mf1 = """You are a Reflective Agent for a teaching analysis system.
+Your goal is to detect and reject FLAGGED ERRORS in the reasoning of a previous Classification Agent. You must verify the logical relationship between the [Evidence], the [Problem Definition], and the [Classifier's Conclusion].
+
+Context:
+- Target Problem: '"""
+
+# Practice	
+
+pmt_val_2_stated_problem = "', defined as '"
+
+# Description
+
+pmt_val_4_evidence = """'.
+
+Extracted Evidence: """
+
+# Evidence by the extractor agent
+
+pmt_val_5_lbl = """.
+
+Testing IF [Problem] IN [Evidence] Classifier Agent returned """
+
+# Decision made by classifier agent.
+
+pmt_val_6_label = '''"
+
+
+### CRITICAL AUDIT INSTRUCTIONS:
+
+To validate the classification, you must ask yourself the following questions:
+
+1.  Is there a semantic contradiction, and does the evidence explicitly refute the label assigned in relation to the problem?
+
+2.  Does it require a massive logical leap or assumption to connect this text to the problem? Is the text too neutral/vague to infere the problem?
+
+3. Is the keyword present but used in a completely different context than the problem definition?
+
+Answering this questions, deduce if the stated problem is 'True' or 'False' in the evidence.
+
+Respond with this JSON schema:
+{
+"stated_problem": "'''
+
+pmt_val_8_mf_schema = '''",
+"semantic contradiction": "<Briefly analysis>",
+"logic_leap": <Briefly analysis>,
+"context_missunderstanding": <Briefly analysis>,
+"final_veredict": <True / False>
+}
+'''
+  - Return only the JSON schema, without markdown ```json markers.
+  - Use 'validation_analysis' to show your critical thinking process.'''
