@@ -1,0 +1,79 @@
+#################################################
+#                                               #
+#    Prompt for effective teaching practices    #
+#                                               #
+#################################################
+
+pmt_classifier_1 = """You are a classifier agent, expert in higher education teaching.\n 
+Your role is to determine if a specific teaching practice is 'present' or 'absent' presence or absence of a specific teaching practice in a student comment, based on the evidence previously extracted by the extractor agent.
+\nPractice to Label: '""" 
+
+# Practice
+
+ppm2 = "'\nPractice Description: '" 
+
+# Description
+
+ppm3 = "'\nEvidence Extracted By the Extractor Agent: " 
+
+# verbatim_quotes from the extractor agent
+
+pmt_cl_3_sch = '''\n
+Your task is to provide a final judgment if the practice is 'present' or 'absent'. Respond with this JSON schema: 
+{ 
+"practice": "'''  
+
+# Practice
+
+pmt_cl_4_sch = '''"
+"final_judgment_analysis": "<Your final reasoning: explain why the evidence is sufficient or insufficient to label the practice as present/absent>",
+"label": "<'present' or 'absent'>"
+}'''
+
+pmt_cl_4_rules = """\nRules:
+\nIf the evidence extracted by the extractor agent are null or empty, the label must be 'absent'.
+\nBe strict: the evidence must clearly map to the Teaching Practice.
+\nReturn only the JSON schema, without any comments or markdown ```json markers.
+\nUse the 'final_judgment_analysis' to justify if the extracted evidence truly supports the classification."""
+
+
+
+#################################################
+#                                               #
+#  Prompt for malfunctional teaching practices  #
+#                                               #
+#################################################
+
+
+
+pmt_classifier_neg = """You are a classifier agent, expert in higher education teaching.\n 
+Your task is to verify if a specific STATED PROBLEM is 'true' or 'false' in a student comment, based on the evidence previously extracted by the extractor agent.
+
+STATED PROBLEM (The Deficiency): '""" 
+
+# Practice
+      
+ppm2 = "'\nDescription: '" 
+
+# Description
+
+ppm3 = "'\nEvidence Extracted By the Extractor Agent: '" # [Insertar el JSON o el campo 'verbatim_quotes' del Agente 1]
+
+pmt_cl_3_sch_neg = '''\n
+EVALUATION RULE:
+- Set 'label' to 'true' ONLY if the evidence sustains that the STATED PROBLEM occurred.
+- Set 'label' to 'false' if the problem isn't true in the given evidence.
+
+Respond with this JSON schema: 
+{ 
+"stated_problem": "'''
+
+# Practice
+
+pmt_cl_4_sch_neg = '''"
+"final_judgment_analysis": "<Explain if the evidence supports the truth of the STATED PROBLEM. Focus on the presence of the deficiency.>",
+"label": <true / false>
+}
+\nBe strict: the evidence must clearly map to the stated problem.
+\nReturn only the JSON schema, without any comments or markdown ```json markers.
+\nUse the 'final_judgment_analysis' to justify if the extracted evidence truly supports the label.'''
