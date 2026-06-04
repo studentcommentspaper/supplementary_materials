@@ -13,8 +13,8 @@ The extended version includes the 44 practices resulting from the content valida
 
 | Instrument | Content validation by expert panel | Construct validation through E-MIRT |  
 |:---|:---|:---|
-|[Short version](file.json)| YES | YES | 
-|[Extended version](file.json)| YES | NO | 
+|[Short version](https://github.com/studentcommentspaper/supplementary_materials/blob/38bbf73af46b06eff164d5c6794c16d6b1d0c182/instruments/short_instrument_for_teaching_practices.json)| YES | YES | 
+|[Extended version](https://github.com/studentcommentspaper/supplementary_materials/blob/38bbf73af46b06eff164d5c6794c16d6b1d0c182/instruments/extended_instrument_for_teaching_practices.json)| YES | NO | 
 
 
 
@@ -23,9 +23,7 @@ The data used correspond to the Student Feedback Analysis Dataset (Herath et al.
 
 > Herath, M., Chamindu, K., Maduwantha, H., & Ranathunga, S. (2022, June). Dataset and Baseline for Automatic Student Feedback Analysis. In Proceedings of the Thirteenth Language Resources and Evaluation Conference (pp. 2042-2049)
 
-Our labeling of teaching practices is available in JSON format:
-
-[Labeled dataset](file.json)
+Our human annotation of teaching practices is available in JSON format: [Human annotation dataset](https://github.com/studentcommentspaper/supplementary_materials/blob/cbbe0c2bbadbc843937f9b48984e4b08df97a39c/datasets/Student_Feedback_Analysis_Dataset%20-%20Human%20annotation%20of%20teaching%20practices.json)
 
 
 ### Description of extracted teaching practices from prior research
@@ -128,6 +126,13 @@ The prompts used for each inference approach are available in the [`prompts/`](.
   * Classifier agent:[`prompts/MAS-classifier.txt`](./prompts/MAS-classifier.txt)
   * Validator agent: [`prompts/MAS-validator.txt`](./prompts/MAS-validator.txt)
 
-The complete inference dataset, containing the outputs of all models across all inference approaches, is available in [`dataset/all_inferences.csv`](./dataset/file). 
+In addition, representative examples of comments for each practice used for few-shot inferences are available at: [examples few-shot.json](https://github.com/studentcommentspaper/supplementary_materials/blob/38bbf73af46b06eff164d5c6794c16d6b1d0c182/instruments/examples%20few-shot.json)
+
+Datasets with models inferences are organized by inference approach: 
+* [`Zero-shot inferences`](https://github.com/studentcommentspaper/supplementary_materials/blob/cbbe0c2bbadbc843937f9b48984e4b08df97a39c/datasets/LLM%20inferences%20-%20Zero-Shot%20-%20all%20teaching%20practices.csv)
+* [`Few-shot inferences`](https://github.com/studentcommentspaper/supplementary_materials/blob/cbbe0c2bbadbc843937f9b48984e4b08df97a39c/datasets/LLM%20inferences%20-%20Few-Shot%20-%20all%20teaching%20practices.csv)
+* [`Multi-agent system inferences`](https://github.com/studentcommentspaper/supplementary_materials/blob/cbbe0c2bbadbc843937f9b48984e4b08df97a39c/datasets/LLM%20inferences%20-%20Multi-agent%20system%20-%20all%20teaching%20practices.csv)
+
+
 
 Specifically, the experiments utilized four models (**Kimi-k2 32B, Qwen3.2 32B, Llama3.1 70B,** and **GPT-OSS 120B**) evaluated across three inference approaches: Zero-Shot, Few-Shot, and a Multi-Agent System (MAS).
