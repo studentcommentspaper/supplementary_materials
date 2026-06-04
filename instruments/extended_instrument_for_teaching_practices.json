@@ -1,0 +1,190 @@
+{
+    "Dimensions": [
+        {
+            "type": "Effective teaching practices",
+            "practices": [
+                {
+                    "practice": "Application of Knowledge",
+                    "description": "Encouraging students to apply what they have learned in increasingly authentic, real-world contexts and/or in real-world-like problems."
+                },
+                {
+                    "practice": "Clarity in Course Objectives",
+                    "description": "Defining clear objectives and expectations to guide students."
+                },
+                {
+                    "practice": "Contextualized Exemplification",
+                    "description": "Providing students with examples of the application or materialization of concepts through detailed, specific, and anecdotal real-life stories."
+                },
+                {
+                    "practice": "Project-Based Learning",
+                    "description": "Engaging students in complex and authentic tasks that foster the development of practical skills under faculty supervision."
+                },
+                {
+                    "practice": "Providing Intellectual Challenges",
+                    "description": "Challenging students to analyze, elaborate on new learning, and understand its theoretical and practical implications."
+                },
+                {
+                    "practice": "Relating Content to Students’ Lives and Interests",
+                    "description": "Highlighting how new content connects with students’ personal contexts to facilitate integration with prior knowledge."
+                },
+                {
+                    "practice": "Constructive alignment",
+                    "description": "Designing curriculum activities that support the achievement of objectives and reflect assessments."
+                },
+                {
+                    "practice": "Problem-Based Learning",
+                    "description": "Providing students with problems to solve, actively applying previously addressed knowledge."
+                },
+                {
+                    "practice": "Course Structure",
+                    "description": "Providing students with clarity in both the representation of conceptual content, the relationships between ideas, and the progressive development of learning toward a well-defined purpose and goal."
+                },
+                {
+                    "practice": "Stimulating Student Interest",
+                    "description": "Engaging students by stimulating their interest in course material to foster better learning outcomes."
+                },
+                {
+                    "practice": "Previous knowledge activation",
+                    "description": "Providing opportunities to recall previously learned ideas from memory"
+                },
+                {
+                    "practice": "Peer learning",
+                    "description": "Engage students in peer evaluation or peer teaching."
+                },
+                {
+                    "practice": "Encouraging Questions and Discussions",
+                    "description": "Encouraging students to ask questions and participate in discussions inside or outside the classroom."
+                },
+                {
+                    "practice": "Close instructor-Student Relationship",
+                    "description": "Instructor availability and willingness to help students or answer questions."
+                },
+                {
+                    "practice": "Clarity and comprehensibility of explanations",
+                    "description": "Ensure that the course content is delivered clearly and understandably to improve student learning."
+                },
+                {
+                    "practice": "Clarity of course materials",
+                    "description": "Class visual resources (such as presentations or others) are understandable and facilitate content comprehension."
+                },
+                {
+                    "practice": "Modelling",
+                    "description": "Allowing students to witness problem-solving or reasoning so that thought processes, planning, or approaches become explicit."
+                },
+                {
+                    "practice": "Interactive materials",
+                    "description": "Provide students with materials they can interact with beyond the classroom (quizzes, exercises, or others)."
+                },
+                {
+                    "practice": "Instructor Enthusiasm for the Course",
+                    "description": "Demonstrating enthusiasm for the course or content to inspire students and create a positive learning environment."
+                },
+                {
+                    "practice": "Frequent Feedback from Teachers",
+                    "description": "Providing timely and high-quality feedback to help students understand their progress and areas for improvement."
+                },
+                {
+                    "practice": "Authentic assessment",
+                    "description": "Evaluation using situations, tasks, or standards similar to those that professionals usually face."
+                },
+                {
+                    "practice": "Peer assessment",
+                    "description": "Students evaluate the quality of their peers’ work and provide feedback to one another."
+                },
+                {
+                    "practice": "Quality and Fairness in Exams",
+                    "description": "Ensuring that exams are fair, well-structured, and aligned with learning objectives to accurately assess achievement."
+                },
+                {
+                    "practice": "Student Self-Assessment",
+                    "description": "Encouraging students to evaluate their own work, promoting reflection and self-awareness in learning."
+                },
+                {
+                    "practice": "Teacher Sensitivity to Class Level and Progress",
+                    "description": "Adapting teaching and assessment practices to align with students’ current levels and progress."
+                }
+            ]
+        },
+        {
+            "type": "Malfunctional teaching practices",
+            "practices": [
+                {
+                    "practice": "Monotony in instructional activities",
+                    "description": "Faculty use the same teaching-learning activities repeatedly or for a long-time within the lesson."
+                },
+                {
+                    "practice": "lack of intellectual challenges",
+                    "description": "The course content, activities, or assignments do not present an interesting challenge for the students, their level of knowledge, and their skills."
+                },
+                {
+                    "practice": "Unbalanced goals",
+                    "description": "The learning objectives omit relevant areas or, conversely, cover too many aspects to be manageable."
+                },
+                {
+                    "practice": "Unclear goals",
+                    "description": "Goal statements are missing, non-transparent, unspecified, incomplete, or incomprehensible."
+                },
+                {
+                    "practice": "No guiding overviews about new contents",
+                    "description": "Maps, organizers for gaining an impression or a first model on what must be learned are missing."
+                },
+                {
+                    "practice": "No preparing tasks",
+                    "description": "There are no tasks for students which activate prior knowledge and link it with new contents."
+                },
+                {
+                    "practice": "No focus on past learning",
+                    "description": "Summaries of prerequisite contents or evaluations of past work are missing."
+                },
+                {
+                    "practice": "Disorganization",
+                    "description": "There is no clear structure on contents, activities, or in time."
+                },
+                {
+                    "practice": "No support for integration of new knowledge",
+                    "description": "There are no elaborative questions, illustrations, or worked examples."
+                },
+                {
+                    "practice": "No modeling",
+                    "description": "There are no activities which demonstrate how to perform desired activities or which articulate the reasoning necessary for the activities."
+                },
+                {
+                    "practice": "No coaching",
+                    "description": "There are no activities which monitor, analyze, and regulate the learners’ knowledge and skill developments."
+                },
+                {
+                    "practice": "Inadequate or insufficient scaffolding",
+                    "description": "The presentation of the content or assessment activities (e.g., assignments) does not match the students’ level of knowledge and skills."
+                },
+                {
+                    "practice": "No validation of assessment and grades",
+                    "description": "There are no attempts to learn about and improve the criteria-based quality of assessments and resulting grading."
+                },
+                {
+                    "practice": "No constructive feedback",
+                    "description": "There is no feedback on the learning process which is explicit, goal-evaluative, specific, positive, and directive-preventive."
+                },
+                {
+                    "practice": "Bad timing in feedback",
+                    "description": "Feedback on learning is too delayed or too early, or irregular in time."
+                },
+                {
+                    "practice": "No suggestions to think about connections or analogies",
+                    "description": "There are no activities in which students have to group problems or invent similar problems."
+                },
+                {
+                    "practice": "No application of knowledge and skills in different contexts",
+                    "description": "Knowledge and skills are not applied in varying scenarios or with different experiences."
+                },
+                {
+                    "practice": "Disrespectful treatment",
+                    "description": "This includes any expression by the instructor that, even if unintentional, has the effect of belittling, humiliating, or ridiculing students. This includes behaviors such as destructive feedback and speaking to students in a condescending manner."
+                },
+                {
+                    "practice": "Discriminatory treatment",
+                    "description": "Faculty treats students unfairly based on characteristics such as gender, ethnic background, religion, or social class."
+                }
+            ]
+        }
+    ]
+}
